@@ -1,0 +1,82 @@
+.manage-event-container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .manage-event-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #5a189a;
+    text-align: center;
+  }
+  
+  .manage-event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .manage-event-form label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+  }
+  
+  .manage-event-form input,
+  .manage-event-form textarea,
+  .manage-event-form select {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+  }
+  
+  .manage-event-form input:focus,
+  .manage-event-form textarea:focus,
+  .manage-event-form select:focus {
+    border-color: #7b2cbf;
+    outline: none;
+  }
+  
+  .manage-event-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .manage-event-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .manage-event-button {
+    padding: 10px 20px;
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .manage-event-button:hover {
+    background-color: #5a189a;
+  }
+  
+  .cancel-button {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .cancel-button:hover {
+    background-color: #999;
+  }
+  

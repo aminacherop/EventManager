@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Annual Tech Conference",
+      "date": "2025-05-10",
+      "time": "20:49",
+      "location": "Tech City Convention Center",
+      "description": "A conference about the latest in technology, innovation, and digital trends.",
+      "imageUrl": "https://images.stockcake.com/public/b/1/e/b1ec5c40-195a-44a3-b90f-1dd0b8e8a55b_large/tech-conference-scene-stockcake.jpg",
+      "guests": [
+        {
+          "id": 1745426272762,
+          "name": "amina",
+          "status": "maybe"
+        },
+        {
+          "id": 1745427022059,
+          "name": "bbbb",
+          "status": "not coming"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "SolFest",
+      "date": "2025-04-20",
+      "time": "21:51",
+      "location": "Green Spot Ruiru",
+      "description": "SolFest is East Africa's premier music festival, dedicated to celebrating and promoting African musical talent on a global stage. Founded on the principles of discipline, order, passion, and excellence, SolFest has become a significant cultural event in East Africa, attracting thousands of attendees each year.",
+      "imageUrl": "https://nnmedia.nation.africa/uploads/2019/09/Sauti-Sol-1320x743.jpg",
+      "maxAttendees": 5000,
+      "guests": []
+    }
+  ]
+}
