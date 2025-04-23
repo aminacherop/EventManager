@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import './ManageGuests.css';
 
 function ManageGuests() {
   const { eventId } = useParams();
+  const navigate = useNavigate();
   const [event, setEvent] = useState(null);
   const [guests, setGuests] = useState([]);
-  const [newGuest, setNewGuest] = useState({ name: '', status: 'coming' });
+  const [newGuest, setNewGuest] = useState({ name: '', email: '', phone: '', status: 'coming' });
 
   useEffect(() => {
     fetch(`http://localhost:5000/events/${eventId}`)
@@ -14,8 +16,12 @@ function ManageGuests() {
       .then(data => {
         setEvent(data);
         setGuests(data.guests || []);
+      })
+      .catch(() => {
+        Swal.fire('Error', 'Failed to load event or guests.', 'error');
+        navigate('/');
       });
-  }, [eventId]);
+  }, [eventId, navigate]);
 
   function updateEventGuests(updatedGuests) {
     const updatedEvent = { ...event, guests: updatedGuests };
@@ -25,12 +31,19 @@ function ManageGuests() {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedEvent)
-    });
+    })
+      .then(res => res.ok ? res.json() : Promise.reject())
+      .then(() => Swal.fire('Success', 'Guests updated!', 'success'))
+      .catch(() => Swal.fire('Error', 'Could not update guests.', 'error'));
   }
 
-  function handleGuestChange(id, field, value) {
+  function handleGuestFieldChange(id, field, value) {
     const updated = guests.map(g => g.id === id ? { ...g, [field]: value } : g);
-    updateEventGuests(updated);
+    setGuests(updated);
+  }
+
+  function handleUpdateGuest() {
+    updateEventGuests(guests);
   }
 
   function handleRemoveGuest(id) {
@@ -46,14 +59,14 @@ function ManageGuests() {
     e.preventDefault();
     const guestToAdd = { id: Date.now(), ...newGuest };
     updateEventGuests([...guests, guestToAdd]);
-    setNewGuest({ name: '', status: 'coming' });
+    setNewGuest({ name: '', email: '', phone: '', status: 'coming' });
   }
 
   if (!event) return <div>Loading...</div>;
 
-  const coming = guests.filter(g => g.status === 'coming').length;
-  const notComing = guests.filter(g => g.status === 'not coming').length;
-  const maybe = guests.filter(g => g.status === 'maybe').length;
+  const comingCount = guests.filter(g => g.status === 'coming').length;
+  const notComingCount = guests.filter(g => g.status === 'not coming').length;
+  const maybeCount = guests.filter(g => g.status === 'maybe').length;
 
   return (
     <div className="manage-guests-container">
@@ -67,9 +80,9 @@ function ManageGuests() {
         </div>
         <div className="header-stats">
           <h3>Guest Statistics</h3>
-          <p>Coming: {coming}</p>
-          <p>Not Coming: {notComing}</p>
-          <p>Maybe: {maybe}</p>
+          <p>Coming: {comingCount}</p>
+          <p>Not Coming: {notComingCount}</p>
+          <p>Maybe: {maybeCount}</p>
         </div>
       </div>
 
@@ -80,17 +93,31 @@ function ManageGuests() {
             <input
               type="text"
               value={guest.name}
-              onChange={e => handleGuestChange(guest.id, 'name', e.target.value)}
+              onChange={e => handleGuestFieldChange(guest.id, 'name', e.target.value)}
+              placeholder="Name"
+            />
+            <input
+              type="email"
+              value={guest.email}
+              onChange={e => handleGuestFieldChange(guest.id, 'email', e.target.value)}
+              placeholder="Email"
+            />
+            <input
+              type="tel"
+              value={guest.phone}
+              onChange={e => handleGuestFieldChange(guest.id, 'phone', e.target.value)}
+              placeholder="Phone"
             />
             <select
               value={guest.status}
-              onChange={e => handleGuestChange(guest.id, 'status', e.target.value)}
+              onChange={e => handleGuestFieldChange(guest.id, 'status', e.target.value)}
             >
               <option value="coming">Coming</option>
               <option value="not coming">Not Coming</option>
               <option value="maybe">Maybe</option>
             </select>
-            <button onClick={() => handleRemoveGuest(guest.id)}>Remove</button>
+            <button className="btn update-btn" onClick={handleUpdateGuest}>Update</button>
+            <button className="btn remove-btn" onClick={() => handleRemoveGuest(guest.id)}>Remove</button>
           </div>
         ))}
 
@@ -98,9 +125,23 @@ function ManageGuests() {
         <form onSubmit={handleAddGuest} className="add-guest-form">
           <input
             type="text"
-            placeholder="Guest Name"
+            placeholder="Name"
             value={newGuest.name}
             onChange={e => handleNewGuestChange('name', e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={newGuest.email}
+            onChange={e => handleNewGuestChange('email', e.target.value)}
+            required
+          />
+          <input
+            type="tel"
+            placeholder="Phone"
+            value={newGuest.phone}
+            onChange={e => handleNewGuestChange('phone', e.target.value)}
             required
           />
           <select
@@ -111,7 +152,7 @@ function ManageGuests() {
             <option value="not coming">Not Coming</option>
             <option value="maybe">Maybe</option>
           </select>
-          <button type="submit">Add Guest</button>
+          <button type="submit" className="btn add-btn">Add Guest</button>
         </form>
       </div>
     </div>

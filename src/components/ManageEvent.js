@@ -45,6 +45,29 @@ function ManageEvent() {
       .catch(() => Swal.fire('Error', 'Failed to update event.', 'error'));
   }
 
+  function handleDelete() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This will permanently delete the event.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: '#d33'
+    }).then(result => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/events/${eventId}`, { method: 'DELETE' })
+          .then(res => {
+            if (!res.ok) throw new Error();
+            Swal.fire('Deleted!', 'Event has been deleted.', 'success').then(() =>
+              navigate('/')
+            );
+          })
+          .catch(() => Swal.fire('Error', 'Failed to delete event.', 'error'));  
+      }
+    });
+  }
+
   if (!event) return <div>Loading...</div>;
 
   return (
@@ -103,6 +126,7 @@ function ManageEvent() {
         <div className="manage-event-actions">
           <button type="submit" className="manage-event-button">Save Changes</button>
           <button type="button" className="manage-event-button cancel-button" onClick={() => navigate('/')}>Cancel</button>
+          <button type="button" className="manage-event-button delete-button" onClick={handleDelete}>Delete Event</button>
         </div>
       </form>
     </div>

@@ -78,7 +78,7 @@ function handleManage(id) {
               <div className="event-info">
                 <span className={`status-badge status-${status}`}>{status.toUpperCase()}</span>
                 <h2 className="event-title">{event.title}</h2>
-                <p className="event-meta">{event.date} @ {event.time}</p>
+                <p className="event-meta">{event.date} at {event.time}</p>
                 <p className="event-meta">{event.location}</p>
                 <div className="action-buttons">
                   <button className="view-button" onClick={function () { toggleExpand(event.id); }}>

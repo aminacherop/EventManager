@@ -1,10 +1,12 @@
 
 .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    border: 1px solid #333;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    background-color: #ffffff;
   }
+  
   
   .page-title {
     font-size: 2rem;

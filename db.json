@@ -10,14 +10,11 @@
       "imageUrl": "https://images.stockcake.com/public/b/1/e/b1ec5c40-195a-44a3-b90f-1dd0b8e8a55b_large/tech-conference-scene-stockcake.jpg",
       "guests": [
         {
-          "id": 1745426272762,
-          "name": "amina",
-          "status": "maybe"
-        },
-        {
-          "id": 1745427022059,
-          "name": "bbbb",
-          "status": "not coming"
+          "id": 1745436261183,
+          "name": "YYYY",
+          "status": "maybe",
+          "email": "mmmm@nn",
+          "phone": "8888"
         }
       ]
     },

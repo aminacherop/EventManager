@@ -6,12 +6,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  .page-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #4a148c;
-  }
+  
   
   .search-filter {
     display: flex;
@@ -36,7 +31,7 @@
   }
   
   .event-card {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #2c1dfa;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
