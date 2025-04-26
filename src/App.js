@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import AddEvent from "./pages/AddEvent";
 import ManageEvent from "./components/ManageEvent";
 import ManageGuests from './components/ManageGuests';
+import About from "./components/About";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/add" element={<AddEvent />} />
           <Route path="/manage-event/:eventId" element={<ManageEvent />} />
           <Route path="/manage-guests/:eventId" element={<ManageGuests />} />
+          <Route path="/About" element= {<About/>} />
 
         </Routes>
       </div>

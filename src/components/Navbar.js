@@ -11,8 +11,8 @@ function Navbar() {
       <ul className="navbar-links">
         <li><NavLink to="/" end>Home</NavLink></li>
         <li><NavLink to="/add">Add Event</NavLink></li>
-        {/*<li><NavLink to="/edit/1">Manage Events</NavLink></li>
-        <li><NavLink to="/guests/1">Manage Guests</NavLink></li>*/}
+        <li><NavLink to="/about"> About </NavLink></li>
+        
       </ul>
     </nav>
   );

@@ -8,15 +8,7 @@
       "location": "Tech City Convention Center",
       "description": "A conference about the latest in technology, innovation, and digital trends.",
       "imageUrl": "https://images.stockcake.com/public/b/1/e/b1ec5c40-195a-44a3-b90f-1dd0b8e8a55b_large/tech-conference-scene-stockcake.jpg",
-      "guests": [
-        {
-          "id": 1745436261183,
-          "name": "YYYY",
-          "status": "maybe",
-          "email": "mmmm@nn",
-          "phone": "8888"
-        }
-      ]
+      "guests": []
     },
     {
       "id": "2",
@@ -27,6 +19,17 @@
       "description": "SolFest is East Africa's premier music festival, dedicated to celebrating and promoting African musical talent on a global stage. Founded on the principles of discipline, order, passion, and excellence, SolFest has become a significant cultural event in East Africa, attracting thousands of attendees each year.",
       "imageUrl": "https://nnmedia.nation.africa/uploads/2019/09/Sauti-Sol-1320x743.jpg",
       "maxAttendees": 5000,
+      "guests": []
+    },
+    {
+      "id": "1745474111997",
+      "title": "Moringa school graduation",
+      "date": "2025-11-28",
+      "time": "09:00",
+      "location": "Park lands",
+      "description": "welcome to our forth graduation ceremony",
+      "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/graduation-instagram-captions-67d1d0d5baed3.png?crop=0.668xw:1.00xh;0.119xw,0&resize=640:*",
+      "maxAttendees": "1000",
       "guests": []
     }
   ]
