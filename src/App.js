@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import AddEvent from "./pages/AddEvent";
 import ManageEvent from "./components/ManageEvent";
 import ManageGuests from './components/ManageGuests';
-import About from "./components/About";
+import About from "./pages/About";
 
 function App() {
   return (

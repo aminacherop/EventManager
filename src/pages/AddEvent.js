@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-//import { useHistory } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import './AddEvent.css';
 
@@ -62,7 +61,15 @@ const AddEvent = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      const newEvent = { ...eventDetails, id: Date.now(), guests: [] };
+      const formattedDate = eventDetails.date.toISOString().split('T')[0];
+
+      //const newEvent = { ...eventDetails, id: Date.now(), guests: [] };
+      const newEvent = { 
+        ...eventDetails, 
+        date: formattedDate,  // Use formatted date string
+        id: Date.now().toString(),
+        guests: [] 
+      };
 
       
       await fetch('http://localhost:5000/events', {
@@ -73,6 +80,7 @@ const AddEvent = () => {
         body: JSON.stringify(newEvent)
       });
 
+      
       navigate('/'); // Redirect to the home page after submission
     }
   };

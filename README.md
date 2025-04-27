@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+# Event Manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Event Manager** is a web-based application built  with react and powered by json server that allows the user to create manage and track events and their guest lists .whether its a bussinedss meeting  a  party   or  a community gathering this app helps organizers efficiently plan events ,track all attendees and maintain organized records  all in a user-friendly interface with full CRUD functionality.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- View a list of all events
+- Create new events
+- Edit existing events
+- Delete events
+- View detailed event information
+- Add and manage guests for each event
+- Filter events by name or date
+- Responsive and user-friendly interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+##  Technologies Used
 
-### `npm test`
+- **React** (Frontend Framework)
+- **JSON Server** (Mock Backend)
+- **HTML5** & **CSS3**
+- **JavaScript (ES6)**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+ ├── components/
+ │    ├── ManageEvent.js
+ |    ├── ManageEvent.css
+ │    ├── ManageGuest.js
+ |    ├── ManageGuest.css
+ │    └── Navbar.js
+ |    ├── Navbar.css
+ ├── pages/
+ │    ├── About.js
+ |    ├── About.css
+ │    ├── AddEvent.js
+ |    ├── AddEvent.css
+ |    ├── Home.js
+ |    ├── Home.css
+ ├── App.js
+ ├── index.js
+ ├── styles/
+ │    └── App.css
+ └── db.json (for JSON Server)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+Follow these instructions to set up the project locally:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clone the repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/aminacherop/event-manager.git
+cd event-manager
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Install dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+### 3. Set up JSON Server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Install **JSON Server** globally if you haven't already:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install -g json-server
+```
 
-### Code Splitting
+Run JSON Server with your `db.json`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+json-server --watch db.json --port 4000
+```
 
-### Analyzing the Bundle Size
+This will start the server at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+http://localhost:5000/events
+```
 
-### Making a Progressive Web App
+### 4. Run the React App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+In a new terminal, start the React application:
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The React app will run on:
 
-### Deployment
+```
+http://localhost:3000
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## ⚙ Deployment Steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To deploy the **Event Manager** project:
+
+1. **Build the React app** for production:
+
+    ```bash
+    npm run build
+    ```
+
+2. **Choose a hosting platform**, for example:
+   - [Netlify](https://www.netlify.com/)
+   - [Vercel](https://vercel.com/)
+   - [GitHub Pages](https://pages.github.com/)
+   - [Render](https://render.com/)
+
+3. **Deploy the `build/` folder** using your hosting service's instructions.
+
+4. For backend hosting (JSON Server), you can:
+   - Use [Render](https://render.com/) to deploy a JSON Server instance.
+   - Or replace it with a real backend later (Node.js, Django, etc.) for production.
+
+---
+
+## Example JSON Data (db.json)
+
+```json
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Annual Tech Conference",
+      "date": "2025-05-10",
+      "time": "20:49",
+      "location": "Tech City Convention Center",
+      "description": "A conference about the latest in technology, innovation, and digital trends.",
+      "imageUrl": "https://images.stockcake.com/public/b/1/e/b1ec5c40-195a-44a3-b90f-1dd0b8e8a55b_large/tech-conference-scene-stockcake.jpg",
+      "guests": []
+    }
+  ]
+}
+```
+
+---
+
+## Future Improvements
+
+- Authentication system (admin login for event creation)
+- Pagination and search optimization
+- Real database integration (MongoDB, PostgreSQL)
+- Email notifications to guests
+- Better event categorization and tagging
+
+---
+
+
+## Contributing
+
+Pull requests are welcome!  
+If you have suggestions for improvements, feel free to open an issue or create a pull request.
+
+---
+
+##  License
+
+This project is licensed under the MIT License.  
+Feel free to use and modify it for your own projects!
+
+---

@@ -12,7 +12,12 @@ function Home() {
   useEffect(function () {
     fetch('http://localhost:5000/events')
       .then(function (res) { return res.json(); })
-      .then(function (data) { setEvents(data); });
+      .then(function (data){ const eventWithStringsIds = data.map(event =>({
+        ...event,
+        id:event.id.toString()
+      }));
+      setEvents(eventWithStringsIds)
+    })
   }, []);
 
   function getStatus(dateString) {

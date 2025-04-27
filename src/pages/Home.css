@@ -1,8 +1,15 @@
-
+body{
+  background-image: url(https://cdn0.weddingwire.in/vendor/2983/3_2/960/jpg/royal-broz-event-and-wedding-planner-1_15_232983-157303596628983.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  
+}
 .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 30px auto ;
+    padding: 50px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   

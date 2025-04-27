@@ -30,6 +30,80 @@
       "description": "welcome to our forth graduation ceremony",
       "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/graduation-instagram-captions-67d1d0d5baed3.png?crop=0.668xw:1.00xh;0.119xw,0&resize=640:*",
       "maxAttendees": "1000",
+      "guests": [
+        {
+          "id": 1745731173644,
+          "name": "Amina",
+          "email": "cherop26@gmail.com",
+          "phone": "777777",
+          "status": "maybe"
+        }
+      ]
+    },
+    {
+      "id": "1745661371576",
+      "title": "Art & Wine Evening",
+      "date": "2025-05-28",
+      "time": "18:00",
+      "location": "Green Spot",
+      "description": "An elegant night where art lovers and wine enthusiasts come together to experience breathtaking exhibitions by local and international artists, all while sipping on the finest wines. Enjoy live music, interactive art sessions, and meaningful conversations in a relaxed, sophisticated atmosphere",
+      "imageUrl": "https://as1.ftcdn.net/v2/jpg/01/19/86/76/1000_F_119867677_fwBF26pcEXLQ06bvjPzwyFHy4Is2lWrH.jpg",
+      "maxAttendees": "50",
+      "guests": []
+    },
+    {
+      "id": "1745758089653",
+      "title": "Summer Music Festival",
+      "date": "2025-04-28",
+      "time": "16:00",
+      "location": "Central Park, New York",
+      "description": "Join us for a day of music, food, and fun in the sun with live performances from top artists\n\n",
+      "imageUrl": "https://assets3.thrillist.com/v1/image/3060951/1536x1024/crop;webp=auto;jpeg_quality=60;progressive.jpg",
+      "maxAttendees": "4000",
+      "guests": []
+    },
+    {
+      "id": "1745758261761",
+      "title": " Tech Innovators Conference",
+      "date": "2025-04-29",
+      "time": "21:00",
+      "location": "Silicon Valley Convention Center",
+      "description": "A gathering of the brightest minds in tech. Network, learn, and be inspired by keynote speakers",
+      "imageUrl": "https://assets.techrepublic.com/uploads/2022/05/top-5-conferences-2022-tom.jpeg",
+      "maxAttendees": "300",
+      "guests": []
+    },
+    {
+      "id": "1745758369689",
+      "title": "Charity Gala Night",
+      "date": "2025-04-30",
+      "time": "21:00",
+      "location": " The Grand Hotel Ballroom",
+      "description": "Dress your best for a night of elegance and giving back. All proceeds go to local charities",
+      "imageUrl": "https://img.freepik.com/free-psd/gala-night-psd-text-effect_47987-18886.jpg",
+      "maxAttendees": "500",
+      "guests": []
+    },
+    {
+      "id": "1745758480362",
+      "title": "Art and Wine Exhibition",
+      "date": "2025-04-26",
+      "time": "19:00",
+      "location": "Downtown Art Gallery",
+      "description": " Explore contemporary art while enjoying curated wine selections. Meet artists and wine experts",
+      "imageUrl": "https://media.istockphoto.com/id/1480109377/photo/success-hands-or-toast-in-a-party-for-goals-winning-deal-or-new-year-at-luxury-social-event.jpg?s=612x612&w=0&k=20&c=7O7m7lG6LVXY-rzr1NE4aVgkJhxjAnS25PkSM_jTN9c=",
+      "maxAttendees": "1000",
+      "guests": []
+    },
+    {
+      "id": "1745758628023",
+      "title": " Fitness Bootcamp",
+      "date": "2025-05-01",
+      "time": "16:59",
+      "location": "Riverside Park",
+      "description": "Kickstart your fitness journey with this energetic bootcamp led by professional trainers\n\n",
+      "imageUrl": "https://p1.socds.net/account/7190/eBv2o-7YxlH.jpg",
+      "maxAttendees": "100",
       "guests": []
     }
   ]
